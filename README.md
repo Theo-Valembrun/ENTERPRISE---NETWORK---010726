@@ -6,7 +6,7 @@
 
 ## Project Summary
 
-This repository documents a Cisco Packet Tracer enterprise network built around a 3-tier design: access, distribution, and core. The lab includes VLAN segmentation, inter-VLAN routing, DHCP relay, centralized logging, server services, and an ASA firewall separating the internal network from the edge router.
+This repository documents a Cisco Packet Tracer enterprise network built around a 3-tier design: access, distribution, and core. The lab includes VLAN segmentation, inter-VLAN routing, DHCP relay on the switch layer, centralized logging, server services, and an ASA firewall separating the internal network from the edge router.
 
 ## Key Design Elements
 
@@ -16,7 +16,7 @@ This repository documents a Cisco Packet Tracer enterprise network built around 
 - Layer 3 routing on the core switch through SVIs
 - Static routing across the core, firewall, and edge router
 - ASA 5506-X stateful firewall with inside and outside zones
-- DHCP relay and centralized syslog forwarding
+- DHCP relay on the switches and centralized syslog forwarding
 
 ## Addressing Plan
 
@@ -34,7 +34,7 @@ This repository documents a Cisco Packet Tracer enterprise network built around 
 ## Services
 
 - Web and DNS services hosted in the server farm
-- DHCP served to client VLANs through IP helper relay on the core switch
+- DHCP relay configured on the switches, with the DHCP service hosted on the server farm
 - Syslog logs forwarded from the core to the DB server
 - Controlled ICMP inspection on the ASA for stateful connectivity testing
 

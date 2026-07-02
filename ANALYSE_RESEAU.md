@@ -19,9 +19,9 @@ Cette documentation confirme une architecture d'entreprise en trois couches avec
 
 ## Services d'Infrastructure
 
-- Le coeur relaie le DHCP vers l'adresse `10.0.10.20` via `ip helper-address` sur les VLANs utilisateurs et management. Voir [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L116), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L121), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L126), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L131), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L136).
+- Les switches assurent le relais DHCP vers l'adresse `10.0.10.20` via `ip helper-address` sur les VLANs utilisateurs et management, tandis que le service DHCP est fourni par le serveur de la ferme. Voir [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L116), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L121), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L126), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L131), [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L136).
 - Le coeur envoie ses journaux vers `10.0.10.30`, ce qui confirme la centralisation de la supervision. Voir [Core-Switch-L3_startup-config.txt](Core-Switch-L3_startup-config.txt#L144).
-- Les services HTTP, DNS et DHCP sont coherents avec la topologie, mais leur configuration detaillee ne figure pas dans les exports de routeurs et switches. Leur verification complete depend du fichier Packet Tracer ou des configurations serveur.
+- Les services HTTP, DNS et DHCP sont coherents avec la topologie, mais leur configuration detaillee ne figure pas dans les exports de routeurs et switches. Le service DHCP est a confirmer dans la configuration du serveur, tandis que le relais est assure par les switches. Leur verification complete depend du fichier Packet Tracer ou des configurations serveur.
 
 ## Securite ASA
 
